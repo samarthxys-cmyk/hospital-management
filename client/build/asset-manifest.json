@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aaec6231.css",
+    "main.js": "/static/js/main.b3bb68dc.js",
+    "static/js/453.f636b6e5.chunk.js": "/static/js/453.f636b6e5.chunk.js",
+    "static/media/Gemini_Generated_Image_knhtgfknhtgfknht.png": "/static/media/Gemini_Generated_Image_knhtgfknhtgfknht.0a35445e98e6a63445c5.png",
+    "static/media/1000_F_475009987_zwsk4c77x3cTpcI3W1C1LU4pOSyPKaqi.jpg": "/static/media/1000_F_475009987_zwsk4c77x3cTpcI3W1C1LU4pOSyPKaqi.2fead56c9a78b8fbdcde.jpg",
+    "index.html": "/index.html",
+    "main.aaec6231.css.map": "/static/css/main.aaec6231.css.map",
+    "main.b3bb68dc.js.map": "/static/js/main.b3bb68dc.js.map",
+    "453.f636b6e5.chunk.js.map": "/static/js/453.f636b6e5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aaec6231.css",
+    "static/js/main.b3bb68dc.js"
+  ]
+}
