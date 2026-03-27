@@ -17,7 +17,30 @@ const app = express();
 
 // 2. Middleware
 app.use(express.json()); 
-app.use(cors());         
+const allowedOrigins = [
+    'http://localhost:3000', // React frontend
+    'http://localhost:5000', // API server (if needed)
+    "https://hospital-management-backend-olive.vercel.app/",
+    
+
+  ];
+  
+  const corsOptions = {
+    origin: function (origin, callback) {
+      // Allow non-browser tools like Postman
+      if (!origin) return callback(null, true);
+  
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.error(' CORS blocked origin:', origin);
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true, // if using cookies or Authorization headers
+  };
+  
+  app.use(cors(corsOptions));   
 
 // 3. API Routes - These must come AFTER middleware but BEFORE the server starts
 app.use('/api/patients', patientRoutes);
