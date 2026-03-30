@@ -26,8 +26,8 @@ const Staff = () => {
             console.error("Error loading staff:", error);
         }
     };
-
-    useEffect(() => { fetchStaff(); }, []);
+// eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => { fetchStaff(); }, [fetchStaff]);
 
     // 2. Handle Submit
     const handleSubmit = async (e) => {

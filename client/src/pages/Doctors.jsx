@@ -32,7 +32,8 @@ const Doctors = () => {
         }
     };
 
-    useEffect(() => { fetchDoctors(); }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => { fetchDoctors(); }, [fetchDoctors]);
 
     // 2. Handle Add Doctor Submission
     const handleSubmit = async (e) => {

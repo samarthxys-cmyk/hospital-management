@@ -24,10 +24,10 @@ const Appointments = () => {
             console.error("Fetch error:", error);
         }
     };
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchAppointments();
-    }, []);
+    },  [fetchAppointments]);
 
     // 2. Handle Save to MongoDB
     const handleSave = async (e) => {

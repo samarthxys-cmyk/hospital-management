@@ -25,9 +25,10 @@ const Patients = () => {
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchPatients();
-    }, []);
+    }, [fetchPatients]);
 
     // 2. Delete Patient
     const handleDelete = async (id) => {

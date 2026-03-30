@@ -26,9 +26,10 @@ const Inventory = () => {
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchInventory();
-    }, []);
+    }, [fetchInventory]);
 
     // Handle Form Submission
     const handleSubmit = async (e) => {

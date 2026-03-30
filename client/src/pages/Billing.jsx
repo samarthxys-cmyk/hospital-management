@@ -26,8 +26,8 @@ const Billing = () => {
             console.error("Error fetching billing:", error);
         }
     };
-
-    useEffect(() => { fetchInvoices(); }, []);
+// eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => { fetchInvoices(); }, [fetchInvoices]);
 
     // Handle Invoice Creation
     const handleSubmit = async (e) => {
