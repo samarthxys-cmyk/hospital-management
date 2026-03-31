@@ -88,3 +88,98 @@
     cursor: pointer;
     color: #95a5a6;
 }
+@media (max-width: 768px) {
+    /* 1. Header & Search Area */
+    .table-wrapper {
+        padding: 15px;
+        max-height: none; /* Let the page scroll naturally on mobile */
+    }
+
+    .table-title-area {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .table-search {
+        width: 100%;
+        margin-right: 0;
+        padding: 12px; /* Larger touch target */
+    }
+
+    .add-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* 2. Table to Card Transformation */
+    .patient-table thead {
+        display: none; /* Hide headers */
+    }
+
+    .patient-table, 
+    .patient-table tbody, 
+    .patient-table tr, 
+    .patient-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .patient-table tr {
+        margin-bottom: 20px;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    .patient-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 12px 10px;
+        border-bottom: 1px solid #f9f9f9;
+    }
+
+    .patient-table td:last-child {
+        border-bottom: none;
+        justify-content: center; /* Center the action dots */
+    }
+
+    /* 3. Label Injection */
+    /* Add data-label="ID", data-label="Name", etc. to your HTML <td> tags */
+    .patient-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #7f8c8d;
+        font-size: 13px;
+        text-transform: uppercase;
+        float: left;
+    }
+
+    /* 4. Column Specific Fixes */
+    .status-col {
+        width: 100%; /* Reset fixed width */
+    }
+
+    .badge {
+        margin-right: 0; /* Remove desktop margin */
+        width: 90px;     /* Slightly smaller for mobile */
+    }
+
+    .id-col, .name-col {
+        text-align: right;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 480px) {
+    .patient-table td {
+        font-size: 14px;
+    }
+    
+    .badge {
+        font-size: 11px;
+    }
+}

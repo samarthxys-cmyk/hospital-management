@@ -110,15 +110,77 @@
     background: #fee2e2;
     color: #b91c1c;
 }
-
 @media (max-width: 640px) {
+    /* 1. Card Container Tweak */
     .stat-card {
-        padding: 18px;
-        border-radius: 20px;
+        padding: 16px;
+        gap: 12px; /* Reduced gap for smaller screens */
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(16, 24, 40, 0.05); /* Softer shadow for mobile */
     }
 
+    /* 2. Header Adjustment */
+    .stat-card-header {
+        gap: 8px;
+    }
+
+    .stat-title {
+        font-size: 0.7rem; /* Slightly smaller for narrow widths */
+        letter-spacing: 0.05em;
+    }
+
+    /* 3. Metric & Value Layout */
+    .stat-card-metric {
+        flex-direction: row; /* Keep value and trend on one line if possible */
+        flex-wrap: wrap;    /* Wrap only if the number is huge */
+        align-items: center; 
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .stat-value {
+        font-size: 1.8rem; /* Use a fixed size or tighter clamp for mobile */
+        order: 1;
+    }
+
+    .stat-trend {
+        order: 2;
+        padding: 4px 10px; /* Slimmer padding */
+        font-size: 0.7rem;
+    }
+
+    /* 4. Meta Information */
+    .stat-meta {
+        font-size: 0.85rem;
+        margin-top: -4px; /* Pull closer to the value */
+    }
+
+    /* 5. Icon Scaling */
+    .stat-icon {
+        min-width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+    }
+
+    /* 6. Decoration Adjustments */
+    .stat-card::after {
+        width: 100px;
+        height: 100px;
+        right: -30px;
+        bottom: -40px; /* Scale down the background glow */
+    }
+}
+
+/* Extra Small (Phones under 380px) */
+@media (max-width: 380px) {
     .stat-card-metric {
         flex-direction: column;
         align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .stat-trend {
+        margin-top: 4px;
     }
 }
