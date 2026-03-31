@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+;
 
 // 1. Imports (Routes) - Keep these at the top
 const patientRoutes = require('./routes/patientRoutes');
@@ -11,9 +12,12 @@ const billingRoutes = require('./routes/billingRoutes');     // Top with imports
 const doctorRoutes = require('./routes/doctorRoutes');
 const staffRoutes = require('./routes/staffRoutes');
 const authRoutes = require('./routes/authRoutes'); // Top with imports
+const connectDB = require('./db');
 
 
 const app = express();
+connectDB();
+
 
 // 2. Middleware
 app.use(express.json()); 
@@ -55,13 +59,6 @@ app.use('/api/doctors', doctorRoutes);
 app.use('/api/staff', staffRoutes);
 
 
-// 4. Connect to MongoDB
-const MONGO_URI = process.env.MONGO_URI;
-console.log('🔗 Connecting to MongoDB with URI:', MONGO_URI);
-
-mongoose.connect(MONGO_URI)
-    .then(() => console.log('✅ Connected to MongoDB'))
-    .catch((err) => console.log('❌ MongoDB Connection Error:', err));
 
     
 
