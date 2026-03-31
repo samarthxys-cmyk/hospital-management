@@ -107,3 +107,73 @@
     font-weight: bold;
     margin-top: 10px;
 }
+@media (max-width: 768px) {
+    /* 1. Header & Search Bar */
+    .patients-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .add-patient-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .management-bar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .search-wrapper {
+        width: 100%; /* Spans full width of the container */
+        margin-bottom: 10px;
+    }
+
+    /* 2. Modal & Form Responsiveness */
+    .modal-box {
+        width: 95%; /* Small margin on sides */
+        padding: 20px;
+        max-height: 90vh; /* Prevents modal from going off-screen */
+        overflow-y: auto; /* Adds scroll if form is long */
+    }
+
+    .form-row {
+        flex-direction: column; /* Stacks side-by-side inputs */
+        gap: 0;
+    }
+
+    .input-half {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .registration-form input, 
+    .registration-form select {
+        width: 100%; /* Ensures inputs don't overflow */
+        font-size: 16px; /* Prevents iOS auto-zoom on focus */
+        padding: 12px; /* Larger hit area for fingers */
+    }
+
+    .submit-form-btn {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    /* 3. General Container Tweak */
+    .patients-container {
+        padding: 5px; /* Saves precious screen real estate */
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .modal-head h2 {
+        font-size: 1.2rem;
+    }
+    
+    .modal-box {
+        padding: 15px;
+    }
+}

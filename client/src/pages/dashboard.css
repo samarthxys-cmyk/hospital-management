@@ -556,3 +556,82 @@
         height: 280px;
     }
 }
+/* --- Mobile Optimization (under 500px) --- */
+@media (max-width: 500px) {
+    /* 1. Reduce overall page spacing */
+    .dashboard-page {
+        gap: 16px;
+        padding: 12px; /* Add slight padding to the container if not present */
+    }
+
+    /* 2. Tighten Panel Paddings */
+    .dashboard-panel,
+    .admissions-panel,
+    .readiness-panel,
+    .alerts-panel,
+    .capacity-panel,
+    .timeline-panel,
+    .dashboard-hero {
+        padding: 16px !important; 
+        border-radius: 20px;
+    }
+
+    /* 3. Scale down typography */
+    .hero-copy h1 {
+        font-size: 1.8rem; /* Prevents text from breaking layout */
+    }
+
+    .hero-highlight strong {
+        font-size: 2.2rem;
+    }
+
+    .panel-header h2 {
+        font-size: 1.25rem;
+    }
+
+    /* 4. Handle Hero Elements */
+    .hero-pill {
+        min-width: 0; /* Let pills shrink to fit width */
+        width: 100%;
+    }
+
+    .hero-status-grid {
+        grid-template-columns: 1fr; /* Force single column */
+    }
+
+    /* 5. Range Switcher (The buttons) */
+    .range-switcher {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .range-switcher button {
+        flex: 1;
+        padding: 8px 4px;
+        font-size: 0.75rem;
+        text-align: center;
+    }
+
+    /* 6. Timeline Adjustments */
+    .timeline-item {
+        grid-template-columns: 1fr; /* Stack time above content on very small screens */
+        gap: 8px;
+    }
+
+    .timeline-time {
+        width: fit-content;
+        min-width: 60px;
+        padding: 4px 8px;
+    }
+
+    /* 7. Remove decorative elements that waste space */
+    .dashboard-hero::after {
+        display: none; /* Hide the background circle to keep it clean */
+    }
+
+    /* 8. Fix Stat Cards */
+    .chart-stat-card strong {
+        font-size: 1.4rem;
+    }
+}

@@ -167,4 +167,99 @@
     padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;
+}@media (max-width: 768px) {
+    /* 1. Header & Filters Stacked */
+    .appt-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .book-btn {
+        width: 100%;
+    }
+
+    .appt-filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .appt-filters select, 
+    .date-picker {
+        width: 100%;
+    }
+
+    /* 2. Responsive Table (Transforms into Cards) */
+    .appt-table-container {
+        padding: 10px;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .appt-table thead {
+        display: none; /* Hide headers on mobile */
+    }
+
+    .appt-table, 
+    .appt-table tbody, 
+    .appt-table tr, 
+    .appt-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .appt-table tr {
+        background: white;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .appt-table td {
+        padding: 8px 0;
+        border: none;
+        text-align: right;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    /* Add labels for the table data */
+    .appt-table td::before {
+        content: attr(data-label); /* Requires data-label="Time" in your HTML <td> */
+        font-weight: 600;
+        color: #7f8c8d;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .time-cell {
+        border-left: none !important;
+        border-bottom: 2px solid #3498db;
+        padding-left: 0 !important;
+        margin-bottom: 10px;
+    }
+
+    /* 3. Modal Adjustments */
+    .modal-box {
+        width: 90%;
+        margin: 0 20px;
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse; /* Save on top for thumbs */
+    }
+
+    .modal-actions button {
+        width: 100%;
+        padding: 12px;
+    }
 }

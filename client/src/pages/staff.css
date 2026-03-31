@@ -150,3 +150,86 @@
 .form-row { display: flex; gap: 10px; }
 .form-group { flex: 1; }
 .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+@media (max-width: 768px) {
+    /* 1. Header & Add Button */
+    .staff-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .add-staff-btn {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* 2. Grid Adjustment */
+    .staff-grid {
+        grid-template-columns: 1fr; /* Force single column on mobile */
+        gap: 15px;
+    }
+
+    /* 3. Card Layout Optimization */
+    .staff-card {
+        flex-direction: column; /* Stack avatar, info, and buttons vertically */
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+    .staff-info {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .staff-avatar {
+        width: 80px; /* Slightly larger for better visual balance on mobile */
+        height: 80px;
+        margin: 0 auto 15px auto;
+        font-size: 32px;
+    }
+
+    /* 4. Action Buttons Fix */
+    .staff-actions {
+        margin-left: 0; /* Reset desktop auto-margin */
+        flex-direction: row; /* Keep buttons side-by-side */
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .msg-btn, .edit-btn {
+        flex: 1; /* Make buttons equal width */
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 5. Modal Fixes */
+    .modal-box {
+        width: 90%;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse; /* Put primary action on top for thumb access */
+    }
+
+    .modal-actions button {
+        width: 100%;
+        padding: 14px;
+    }
+}

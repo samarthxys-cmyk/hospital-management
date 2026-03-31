@@ -95,3 +95,104 @@
 }
 
 .stock-btn:hover { background: #f8f9fa; }
+@media (max-width: 768px) {
+    /* 1. Header & Button */
+    .inventory-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .add-item-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+    }
+
+    /* 2. Summary Mini-Cards (Grid Layout) */
+    .inventory-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two cards per row */
+        gap: 12px;
+    }
+
+    .summary-card {
+        padding: 12px;
+    }
+
+    .summary-card h3 {
+        font-size: 18px;
+    }
+
+    /* 3. Table to Card Transformation */
+    .inventory-table-container {
+        padding: 10px;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .inventory-table thead {
+        display: none; /* Hide headers */
+    }
+
+    .inventory-table, 
+    .inventory-table tbody, 
+    .inventory-table tr, 
+    .inventory-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .inventory-table tr {
+        background: white;
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .inventory-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #f9f9f9;
+        font-size: 14px;
+        text-align: right;
+    }
+
+    .inventory-table td:last-child {
+        border-bottom: none;
+        padding-top: 15px;
+        justify-content: center; /* Center the action buttons */
+        gap: 10px;
+    }
+
+    /* Add Labels using data-label attribute */
+    .inventory-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #7f8c8d;
+        text-align: left;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    /* 4. Adjusting Specific Elements */
+    .stock-status {
+        margin: 0;
+    }
+
+    .stock-btn {
+        flex: 1; /* Make buttons grow to fill space on mobile */
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* Small Mobile (Phones under 480px) */
+@media (max-width: 480px) {
+    .inventory-summary {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+}

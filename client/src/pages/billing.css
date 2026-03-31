@@ -97,3 +97,98 @@
     border-radius: 4px;
     cursor: pointer;
 }
+/* --- Billing Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    /* 1. Stack Header Elements */
+    .billing-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .generate-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 2. Stack Stat Boxes vertically */
+    .billing-stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .stat-box {
+        width: 100%;
+    }
+
+    /* 3. Adjust Table Controls */
+    .table-top {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bill-search {
+        width: 100%;
+    }
+
+    /* 4. Transform Table into Cards for Small Screens */
+    .billing-table, 
+    .billing-table thead, 
+    .billing-table tbody, 
+    .billing-table th, 
+    .billing-table td, 
+    .billing-table tr {
+        display: block;
+    }
+
+    /* Hide table headers but keep them accessible */
+    .billing-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .billing-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 10px;
+        background: #fff;
+    }
+
+    .billing-table td {
+        border: none;
+        border-bottom: 1px solid #f9f9f9;
+        position: relative;
+        padding-left: 50%; /* Make room for labels */
+        text-align: right;
+        font-size: 14px;
+    }
+
+    .billing-table td:last-child {
+        border-bottom: 0;
+    }
+
+    /* Add labels for each data point using :before */
+    .billing-table td:before {
+        content: attr(data-label); /* Requires adding data-label to your HTML td tags */
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        text-align: left;
+        font-weight: 700;
+        color: #7f8c8d;
+        text-transform: uppercase;
+        font-size: 11px;
+    }
+
+    .invoice-table-container {
+        padding: 15px;
+    }
+    
+    .print-btn {
+        width: 100%;
+        margin-top: 5px;
+        padding: 8px;
+    }
+}

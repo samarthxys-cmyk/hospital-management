@@ -101,3 +101,87 @@
 }
 
 .view-sch:hover { background: #9b59b6; color: white; }
+@media (max-width: 768px) {
+    /* 1. Header Adjustment */
+    .doctors-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .add-doc-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 2. Transform Table to Cards */
+    .doc-table-container {
+        padding: 10px;
+        background: transparent;
+        box-shadow: none;
+        max-height: none; /* Let the page scroll naturally */
+    }
+
+    .doc-table thead {
+        display: none; /* Hide column headers */
+    }
+
+    .doc-table, 
+    .doc-table tbody, 
+    .doc-table tr, 
+    .doc-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .doc-table tr {
+        background: white;
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        border: 1px solid #f1f3f5;
+    }
+
+    .doc-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #fafafa;
+        text-align: right;
+    }
+
+    .doc-table td:last-child {
+        border-bottom: none;
+        padding-top: 15px;
+    }
+
+    /* 3. Data Labels */
+    /* Add labels for mobile view using the data-label attribute */
+    .doc-table td::before {
+        content: attr(data-label); 
+        font-weight: 600;
+        color: #7f8c8d;
+        font-size: 13px;
+        text-align: left;
+    }
+
+    /* 4. Visual Fixes for Mobile */
+    .doc-name-cell {
+        justify-content: flex-end; /* Align name to the right on mobile */
+        gap: 8px;
+    }
+
+    .spec-tag, .status-pill {
+        margin: 0;
+    }
+
+    .view-sch {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background: #f8f0fb; /* Light purple background for touch target */
+    }
+}
