@@ -6,6 +6,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
     margin-bottom: 25px;
 }
 
@@ -22,6 +24,7 @@
 .billing-stats {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
     margin-bottom: 30px;
 }
 
@@ -30,6 +33,7 @@
     padding: 20px;
     border-radius: 12px;
     flex: 1;
+    min-width: 220px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
@@ -44,6 +48,7 @@
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    overflow: auto;
 }
 
 .table-top {
@@ -71,7 +76,7 @@
     color: #7f8c8d;
 }
 
-.billing-table td { padding: 15px; border-bottom: 1px solid #eee; }
+.billing-table td { padding: 15px; border-bottom: 1px solid #eee; word-break: break-word; }
 
 .inv-id { color: #3498db; font-weight: 600; }
 .inv-patient { font-weight: 600; }

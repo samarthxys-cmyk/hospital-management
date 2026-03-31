@@ -102,16 +102,18 @@ const Billing = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {invoices.map((inv) => (
+                        {invoices.length > 0 ? invoices.map((inv) => (
                             <tr key={inv._id}>
-                                <td>#{inv.invoiceNumber}</td>
-                                <td>{inv.patientName}</td>
-                                <td>${inv.amount}</td>
-                                <td>{inv.method}</td>
-                                <td><span className={`pay-status ${inv.status.toLowerCase()}`}>{inv.status}</span></td>
-                                <td><button className="print-btn" onClick={() => window.print()}>Print</button></td>
+                                <td data-label="Invoice ID">#{inv.invoiceNumber}</td>
+                                <td data-label="Patient">{inv.patientName}</td>
+                                <td data-label="Amount">${inv.amount}</td>
+                                <td data-label="Method">{inv.method}</td>
+                                <td data-label="Status"><span className={`pay-status ${inv.status.toLowerCase()}`}>{inv.status}</span></td>
+                                <td data-label="Action"><button type="button" className="print-btn" onClick={() => window.print()}>Print</button></td>
                             </tr>
-                        ))}
+                        )) : (
+                            <tr><td colSpan="6" style={{textAlign: 'center', padding: '20px'}}>No invoices available.</td></tr>
+                        )}
                     </tbody>
                 </table>
             </div>

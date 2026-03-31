@@ -81,19 +81,19 @@ const Appointments = () => {
                     <tbody>
                         {appointments.length > 0 ? appointments.map((appt) => (
                             <tr key={appt._id}>
-                                <td className="time-cell">
+                                <td className="time-cell" data-label="Date & Time">
                                     <strong>{appt.date}</strong> <br />
                                     <small>{appt.time}</small>
                                 </td>
-                                <td>{appt.patientName}</td>
-                                <td>{appt.doctorName}</td>
-                                <td>
+                                <td data-label="Patient">{appt.patientName}</td>
+                                <td data-label="Doctor">{appt.doctorName}</td>
+                                <td data-label="Status">
                                     <span className={`status-dot ${appt.status.toLowerCase()}`}>
                                         {appt.status}
                                     </span>
                                 </td>
-                                <td>
-                                    <button onClick={() => handleDelete(appt._id)} className="delete-icon">🗑️</button>
+                                <td data-label="Actions">
+                                    <button type="button" onClick={() => handleDelete(appt._id)} className="delete-icon">🗑️</button>
                                 </td>
                             </tr>
                         )) : (

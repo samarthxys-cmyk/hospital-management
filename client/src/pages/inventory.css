@@ -6,6 +6,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
     margin-bottom: 25px;
 }
 
@@ -23,11 +25,13 @@
 .inventory-summary {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
     margin-bottom: 25px;
 }
 
 .summary-card {
     flex: 1;
+    min-width: 180px;
     background: white;
     padding: 15px 20px;
     border-radius: 10px;
@@ -45,6 +49,7 @@
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    overflow: auto;
 }
 
 .inventory-table {
@@ -63,6 +68,7 @@
 .inventory-table td {
     padding: 15px;
     border-bottom: 1px solid #eee;
+    word-break: break-word;
 }
 
 .category-tag {

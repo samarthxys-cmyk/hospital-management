@@ -88,19 +88,19 @@ const Doctors = () => {
                     <tbody>
                         {doctors.length > 0 ? doctors.map((doc) => (
                             <tr key={doc._id}>
-                                <td className="doc-name-cell">
+                                <td className="doc-name-cell" data-label="Doctor">
                                     {/* Using first letter of name for the icon */}
                                     <div className="doc-img">{doc.name.split(' ').pop().charAt(0)}</div>
                                     {doc.name}
                                 </td>
-                                <td><span className="spec-tag">{doc.specialization}</span></td>
-                                <td>{doc.phone}</td>
-                                <td>
+                                <td data-label="Specialization"><span className="spec-tag">{doc.specialization}</span></td>
+                                <td data-label="Contact">{doc.phone}</td>
+                                <td data-label="Status">
                                     <span className={`status-pill ${doc.status.toLowerCase().replace(/\s+/g, '')}`}>
                                         {doc.status}
                                     </span>
                                 </td>
-                                <td><button className="view-sch" onClick={() => handleViewDetails(doc)}>View Details</button></td>
+                                <td data-label="Action"><button type="button" className="view-sch" onClick={() => handleViewDetails(doc)}>View Details</button></td>
                             </tr>
                         )) : (
                             <tr><td colSpan="5" style={{textAlign: 'center', padding: '20px'}}>No doctors registered yet.</td></tr>

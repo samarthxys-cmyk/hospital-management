@@ -16,6 +16,7 @@ function App() {
   // 1. New state to track login status
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activePage, setActivePage] = useState('dashboard');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const renderPage = () => {
     switch(activePage) {
@@ -52,17 +53,35 @@ function App() {
   const handleLogout = () => {
     setIsAuthenticated(false);
     setActivePage('dashboard');
+    setIsSidebarOpen(false);
+  };
+
+  const handleNavigate = (pageId) => {
+    setActivePage(pageId);
+    setIsSidebarOpen(false);
   };
 
   // 3. If logged in, show the full Dashboard
   return (
     <div className="app-shell">
-      <Navbar onLogout={handleLogout} />
+      <Navbar
+        onLogout={handleLogout}
+        onMenuToggle={() => setIsSidebarOpen((open) => !open)}
+        isSidebarOpen={isSidebarOpen}
+      />
       <div className="main-wrapper">
+        <button
+          type="button"
+          className={`sidebar-backdrop ${isSidebarOpen ? 'is-visible' : ''}`}
+          aria-label="Close navigation menu"
+          onClick={() => setIsSidebarOpen(false)}
+        />
         <Sidebar
           activePage={activePage}
-          setActivePage={setActivePage}
+          onNavigate={handleNavigate}
           onLogout={handleLogout}
+          onClose={() => setIsSidebarOpen(false)}
+          isSidebarOpen={isSidebarOpen}
         />
         <main className="content-area">
           {renderPage()}

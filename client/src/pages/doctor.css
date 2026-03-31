@@ -6,6 +6,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
     margin-bottom: 25px;
 }
 
@@ -25,7 +27,7 @@
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     max-height: 650px;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .doc-table {
@@ -48,6 +50,7 @@
     padding: 15px;
     border-bottom: 1px solid #f1f3f5;
     vertical-align: middle;
+    word-break: break-word;
 }
 
 .doc-name-cell {
@@ -89,6 +92,9 @@
 
 .status-pill.onduty { background: #e8f5e9; color: #2e7d32; }
 .status-pill.onleave { background: #fff1f0; color: #cf1322; }
+.status-pill.available { background: #e8f5e9; color: #2e7d32; }
+.status-pill.insurgery { background: #fff3e0; color: #ef6c00; }
+.status-pill.off-duty { background: #ffebee; color: #c62828; }
 
 .view-sch {
     background: none;
@@ -151,6 +157,7 @@
         padding: 10px 0;
         border-bottom: 1px solid #fafafa;
         text-align: right;
+        gap: 12px;
     }
 
     .doc-table td:last-child {

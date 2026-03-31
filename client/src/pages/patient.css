@@ -6,6 +6,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
     margin-bottom: 30px;
 }
 
@@ -23,6 +25,8 @@
 .management-bar {
     display: flex;
     justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
     background: white;
     padding: 15px;
     border-radius: 12px;
@@ -36,7 +40,7 @@
     background: #f8f9fa;
     padding: 8px 15px;
     border-radius: 8px;
-    width: 400px;
+    width: min(100%, 400px);
 }
 
 .search-wrapper input {

@@ -88,19 +88,21 @@ const Inventory = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {items.map((item) => (
+                        {items.length > 0 ? items.map((item) => (
                             <tr key={item._id}>
-                                <td className="name-cell">{item.itemName}</td>
-                                <td><span className="category-tag">{item.category}</span></td>
-                                <td>{item.quantity} {item.unit}</td>
-                                <td>
+                                <td className="name-cell" data-label="Item Name">{item.itemName}</td>
+                                <td data-label="Category"><span className="category-tag">{item.category}</span></td>
+                                <td data-label="Stock Level">{item.quantity} {item.unit}</td>
+                                <td data-label="Status">
                                     <span className={`stock-status ${item.status.toLowerCase().replace(/\s+/g, '-')}`}>
                                         {item.status}
                                     </span>
                                 </td>
-                                <td><button className="stock-btn">Update</button></td>
+                                <td data-label="Actions"><button type="button" className="stock-btn">Update</button></td>
                             </tr>
-                        ))}
+                        )) : (
+                            <tr><td colSpan="5" style={{textAlign: 'center', padding: '20px'}}>No inventory items added yet.</td></tr>
+                        )}
                     </tbody>
                 </table>
             </div>

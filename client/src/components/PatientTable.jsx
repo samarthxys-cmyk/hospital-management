@@ -6,9 +6,17 @@ const PatientTable = ({ patients = [], onDelete }) => { // 1. Add onDelete prop
     
     return (
         <div className="table-wrapper">
-            {/* ... title area stays same ... */}
             <table className="patient-table">
-                {/* ... thead stays same ... */}
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age / Gender</th>
+                        <th>Contact</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
                 <tbody>
                     {patients.length > 0 ? (
                         patients.map((patient) => (
@@ -23,6 +31,7 @@ const PatientTable = ({ patients = [], onDelete }) => { // 1. Add onDelete prop
                                 <td data-label="Actions">
                                     {/* 2. Call onDelete when clicked */}
                                     <button 
+                                        type="button"
                                         className="delete-btn" 
                                         onClick={() => onDelete(patient._id)}
                                     >
@@ -31,9 +40,7 @@ const PatientTable = ({ patients = [], onDelete }) => { // 1. Add onDelete prop
                                 </td>
                             </tr>
                         ))
-                    ) : (
-                        <tr><td colSpan="6">No patients found.</td></tr>
-                    )}
+                    ) : <tr><td colSpan="6">No patients found.</td></tr>}
                 </tbody>
             </table>
         </div>
