@@ -21,7 +21,7 @@ const allowedOrigins = [
     'http://localhost:3000', // React frontend
     'http://localhost:5000', // API server (if needed)
     "https://hospital-management-backend-olive.vercel.app/",
-    "https://hospital-management-front-nine.vercel.app/"
+  "https://69cb4afbba7551aee9966b4e--bright-tartufo-a6f142.netlify.app/"
     
 
   ];
