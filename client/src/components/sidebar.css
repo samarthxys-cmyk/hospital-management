@@ -43,144 +43,107 @@
     color: #e74c3c; /* Red for logout */
     margin-top: auto;
 }
-@media (max-width: 768px) {
-    /* 1. Transform Sidebar into a Hidden Drawer */
+@media (max-width: 1024px) {
     .sidebar {
-        position: fixed;
-        top: 70px; /* Aligns under your navbar */
-        left: -100%; /* Hidden by default */
-        width: 280px;
-        height: calc(100vh - 70px);
-        z-index: 999;
-        transition: left 0.3s ease-in-out;
-        box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* 2. Show Sidebar (Triggered by a class) */
-    /* Add this class to .sidebar via JS or Checkbox Hack to open it */
-    .sidebar.open {
-        left: 0;
+    .sidebar-menu,
+    .sidebar-footer {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
-    /* 3. Improve Touch Targets */
     .menu-item {
-        padding: 18px 25px; /* Larger hit area for thumbs */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        flex: 1 1 140px;
+        justify-content: center;
+        padding: 12px 16px;
+        margin: 0 6px;
+        border-left: none;
+        border-top: none;
+        border-radius: 14px;
+        min-width: 120px;
     }
 
-    .label {
-        font-size: 16px; /* Slightly larger for readability */
-    }
-
-    /* 4. Logout Positioning */
-    .logout {
-        margin-top: auto;
-        padding-bottom: 30px; /* Extra space at the bottom */
-        border-top: 1px solid rgba(231, 76, 60, 0.2);
-    }
-
-    /* 5. Overlay (Optional) */
-    /* If you add a div with this class, it darkens the background when menu is open */
-    .sidebar-overlay {
+    .sidebar .label {
         display: none;
-        position: fixed;
-        inset: 70px 0 0 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 998;
     }
 
-    .sidebar.open + .sidebar-overlay {
-        display: block;
+    .icon {
+        margin-right: 0;
+    }
+
+    .logout {
+        margin-top: 0;
+        width: auto;
     }
 }
-@media (max-width: 480px) {
+
+@media (max-width: 768px) {
     .sidebar {
-        width: 100%;
-        height: 60px;
         position: fixed;
         bottom: 0;
         left: 0;
-        top: auto; /* Remove the top alignment */
-        flex-direction: row; /* Horizontal layout */
-        justify-content: space-around;
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
         padding: 0;
         background-color: #1a2a3a;
         border-top: 1px solid #2c3e50;
         z-index: 1000;
     }
 
-    .menu-item {
-        flex-direction: column; /* Icon on top of Label */
-        justify-content: center;
-        padding: 5px;
-        border-left: none;
-        border-top: 3px solid transparent; /* Highlight moves to top */
-        flex: 1;
-    }
-
-    .menu-item:hover, .menu-item.active {
-        border-left: none;
-        border-top: 3px solid #3498db;
-    }
-
-    .icon {
-        margin-right: 0;
-        margin-bottom: 4px;
-        font-size: 1.1rem;
-    }
-
-    .label {
-        font-size: 10px;
-        text-transform: uppercase;
-    }
-
-    /* Hide logout from bottom bar or move to a profile icon */
-    .logout {
-        display: none; 
-    }
-}@media (max-width: 480px) {
-    .sidebar {
+    .sidebar-menu,
+    .sidebar-footer {
         width: 100%;
-        height: 60px;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        top: auto; /* Remove the top alignment */
-        flex-direction: row; /* Horizontal layout */
+        display: flex;
         justify-content: space-around;
-        padding: 0;
-        background-color: #1a2a3a;
-        border-top: 1px solid #2c3e50;
-        z-index: 1000;
+        gap: 0;
     }
 
     .menu-item {
-        flex-direction: column; /* Icon on top of Label */
-        justify-content: center;
-        padding: 5px;
-        border-left: none;
-        border-top: 3px solid transparent; /* Highlight moves to top */
         flex: 1;
+        padding: 8px 4px;
+        margin: 0;
+        border-left: none;
+        border-top: 3px solid transparent;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .menu-item:hover, .menu-item.active {
+    .menu-item:hover,
+    .menu-item.active {
         border-left: none;
-        border-top: 3px solid #3498db;
+        border-top-color: #3498db;
+        background: transparent;
     }
 
     .icon {
-        margin-right: 0;
-        margin-bottom: 4px;
+        margin: 0 0 4px;
         font-size: 1.1rem;
     }
 
-    .label {
+    .sidebar .label {
+        display: block;
         font-size: 10px;
         text-transform: uppercase;
+        line-height: 1.2;
     }
 
-    /* Hide logout from bottom bar or move to a profile icon */
     .logout {
-        display: none; 
+        display: none;
     }
 }

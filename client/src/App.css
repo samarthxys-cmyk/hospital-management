@@ -13,7 +13,7 @@ body {
 .app-shell {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden; /* Body doesn't scroll; components do */
 }
 
@@ -28,6 +28,24 @@ body {
     padding: 30px;
     overflow-y: auto; /* This allows the Dashboard to scroll */
     background-color: #f4f7f6;
+    min-height: 0;
+}
+
+@media (max-width: 1024px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+
+    .content-area {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-area {
+        padding: 15px;
+        padding-bottom: 90px; /* Space for mobile bottom navigation */
+    }
 }
 
 .dashboard-header {
